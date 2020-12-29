@@ -1,7 +1,7 @@
 <template>
   <div id="login-container">
-    <el-form lass="login-form" ref="login-form" :model="user" :rules="rules">
-      <h3>今日头条后台管理系统</h3>
+    <el-form class="login-form" ref="login-form" :model="user" :rules="rules">
+      <h3>PICC后台管理系统</h3>
       <el-form-item prop="mobile">
         <el-input
           prefix-icon="el-icon-user"
@@ -114,6 +114,9 @@ export default {
             type: "success",
           });
           this.loginLoading = false;
+          //将接口返回的用户相关数据存储到本地  ，进行复用
+          //本地存储只能存储字符串，若是对象或数组类型的数据，则将他们转为JSON 字符串进行存储
+          window.localStorage.setItem("user", JSON.stringify(res.data.data));
         })
         .catch((err) => {
           console.log("登陆失败", err);
@@ -129,7 +132,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 #login-container {
   position: fixed;
   left: 0;
