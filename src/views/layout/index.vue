@@ -124,7 +124,6 @@ export default {
   align-items: center;
   span {
     font-size: 20px;
-    color: orangered;
   }
 }
 
