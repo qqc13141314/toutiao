@@ -1,6 +1,6 @@
 <template>
   <div>
-    fans  测试GIT
+    fans  测试GIT next
   </div>
 </template>
 
